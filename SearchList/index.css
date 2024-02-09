@@ -1,0 +1,15 @@
+.list-details-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.inner-list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+}
+.except-delete-details {
+  display: flex;
+  flex-direction: row;
+}
