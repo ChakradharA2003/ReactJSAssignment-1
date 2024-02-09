@@ -1,0 +1,55 @@
+.bg-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.history-logo-container {
+  background-color: #3367d6;
+  height: 12vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+}
+.search-bar-container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ececec;
+  margin: auto;
+  height: 50px;
+  background-color: #2850a7;
+  width: 600px;
+}
+.history-logo {
+  height: 50px;
+  width: 100px;
+}
+.input-style {
+  background-color: transparent;
+  font-family: 'Roboto';
+  border: 1px solid #ececec;
+  width: 600px;
+  outline: none;
+  font-size: 20px;
+  color: #f8fafc;
+  padding: 8px;
+}
+.search-logo {
+  height: 50px;
+  width: 50px;
+  padding: 8px;
+}
+.search-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+.search-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
