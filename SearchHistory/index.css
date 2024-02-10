@@ -53,3 +53,19 @@
   justify-content: space-around;
   align-items: center;
 }
+.without-history {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.no-history {
+  color: #475569;
+  align-self: center;
+}
+.history-view-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
