@@ -1,17 +1,23 @@
 import {Component} from 'react'
 import './index.css'
-import SearchDetailsList from './Components/SearchHistory/index'
+import SearchDetailsList from '../SearchDetailsList/index'
 
 class SearchHistory extends Component {
   state = {
     searchInput: '',
   }
 
+  onchangeSearchInput = event => {
+    this.setState({
+      searchInput: event.target.value,
+    })
+  }
+
   render() {
     const {searchInput} = this.state
     const {initialHistoryList} = this.props
     const searchedHistory = initialHistoryList.filter(each =>
-      each.title.includes(searchInput),
+      each.title.toLowerCase().includes(searchInput.toLowerCase()),
     )
     let historyView
     if (searchedHistory.length === 0) {
@@ -58,10 +64,11 @@ class SearchHistory extends Component {
               className="input-style"
               placeholder="Search history"
               value={searchInput}
+              onChange={this.onchangeSearchInput}
             />
           </div>
         </div>
-        {historyView}
+        <div className="history-view-container">{historyView}</div>
       </div>
     )
   }
