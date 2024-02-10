@@ -1,6 +1,6 @@
 import {Component} from 'react'
 import './index.css'
-import SearchDetailsList from '../SearchDeatilsList/index'
+import SearchDetailsList from './Components/SearchHistory/index'
 
 class SearchHistory extends Component {
   state = {
