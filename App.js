@@ -1,5 +1,5 @@
 import './App.css'
-import SearchHistory from './SearchHistory/index'
+import SearchHistory from './Components/SearchHistory/index'
 
 // These are the list used in the application. You can move them to any component needed.
 const initialHistoryList = [
