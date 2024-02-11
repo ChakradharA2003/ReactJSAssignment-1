@@ -5,6 +5,7 @@ import SearchDetailsList from '../SearchDetailsList/index'
 class SearchHistory extends Component {
   state = {
     searchInput: '',
+    history: [],
   }
 
   onchangeSearchInput = event => {
@@ -13,14 +14,24 @@ class SearchHistory extends Component {
     })
   }
 
+  deleteSearch = id => {
+    const {history} = this.state
+    const afterDeleted = history.filter(search => search.id !== id)
+    this.setState({
+      history: afterDeleted,
+    })
+  }
+
   render() {
     const {searchInput} = this.state
+    let {history} = this.state
     const {initialHistoryList} = this.props
-    const searchedHistory = initialHistoryList.filter(each =>
+    history = initialHistoryList.filter(each =>
       each.title.toLowerCase().includes(searchInput.toLowerCase()),
     )
+
     let historyView
-    if (searchedHistory.length === 0) {
+    if (history.length === 0) {
       historyView = (
         <div className="without-history">
           <p className="no-history">There is no history to show</p>
@@ -30,7 +41,7 @@ class SearchHistory extends Component {
       historyView = (
         <div className="search-container">
           <ul className="search-list">
-            {searchedHistory.map(search => (
+            {history.map(search => (
               <SearchDetailsList
                 key={search.id}
                 id={search.id}
@@ -38,6 +49,7 @@ class SearchHistory extends Component {
                 logoUrl={search.logoUrl}
                 title={search.title}
                 domainUrl={search.domainUrl}
+                deleteSearch={this.deleteSearch}
               />
             ))}
           </ul>
